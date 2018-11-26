@@ -1,35 +1,19 @@
 function newEntry() {
-    //textbox for name of song
-    document.getElementById("songname").append("Name of Song:\n");
-    var nameOfSong = document.createElement("INPUT");
-    nameOfSong.setAttribute("type", "text");
-    nameOfSong.setAttribute("value", "");
-    
-    document.getElementById("songname").appendChild(nameOfSong);
-    
-    //textbox for review
-    document.getElementById("review").append("Review:\n");
-    var review = document.createElement("INPUT");
-    review.setAttribute("type", "text");
-    review.setAttribute("value", "");
-        
-    document.getElementById("review").appendChild(review);
-    
-    //create save button
-    var button = document.createElement("button");
-    button.innerHTML = "save"; 
-
-    //save feature
-    button.addEventListener("click", function() {
-        document.getElementById("title").innerHTML = nameOfSong.value;
-        document.getElementById("reviewtext").innerHTML = review.value;
-        var date = new Date();
-        document.getElementById("time").innerHTML = date;
-    });
-    
-    document.getElementById("save").appendChild(button);
+    var div = document.createElement("div")
+    var song = prompt("Enter the name of the song:");
+    var review = "";
+    var d = new Date();
+    var date = d.getDate;
+    var time = d.getTime;
+    var user = "Name";
+    if (song != null) {
+        review = prompt("Enter your review of " + song + ":");
+    }
+    if (review != null) {
+        div.innerHTML = "<br />" + "<b>Song Name:</b> " + "<br />" + song + "<br />" + "<b>Review: </b>" + "<br />" + review + "<br /><br />" + "<br /><b>Review by: </b>" + user + "<br />" + d + "<br /><br />";
+        document.body.appendChild(div);
+    }
     
 
+    
 }
-
-
